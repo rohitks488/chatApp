@@ -46,7 +46,7 @@ export function ChatRoom() {
 
     return (
         <div className="flex flex-col">
-            <main className="flex flex-col">
+            <main className="flex flex-col px-2">
                 {messages &&
                     messages.docs.reverse().map((msg) => (
                         <ChatMessage key={msg.id} message={msg.data()}/>
@@ -56,17 +56,18 @@ export function ChatRoom() {
             </main>
 
             <form className="flex" onSubmit={sendMessage}>
-                <button className="ml-auto flex my-2  p-1.5 " type="submit" disabled={!formValue}>
-                    🕊️
-                </button>
-                <input
+                <textarea
+                    rows={(formValue.length>100)?2:1}
                     ref={myRef}
-                    className=" rounded-2xl py-1.5 px-2 m-2 flex bg-white border-2 border-black
+                    className="w-full rounded-2xl py-1.5 px-2 m-2 flex bg-white border-2 border-black
                     text-black min-w-fit"
                     value={formValue}
                     onChange={(e) => setFormValue(e.target.value)}
                     placeholder="say something nice"
                 />
+                <button className="mr-auto flex my-2  p-1.5 " type="submit" disabled={!formValue}>
+                    🕊️
+                </button>
             </form>
         </div>
     );
