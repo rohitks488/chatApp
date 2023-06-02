@@ -8,15 +8,12 @@ export function SignIn() {
     };
 
     return (
-        <>
-            <button className="rounded-2xl text-1xl border-2 border-white h-fit w-fit px-2 py-1 m-5
-      hover:border-black hover:bg-white hover:text-black hover:font-bold text-xl" onClick={signInWithGoogle}>
-                Sign in
+        <div className="bg-amber-950 flex flex-col justify-center items-center">
+            <button className="flex rounded-2xl text-1xl border-2 border-white h-fit w-fit px-2 py-1 m-5
+      hover:border-black hover:bg-white hover:text-black hover:font-bold text-xl text-white" onClick={signInWithGoogle}>
+                Sign in with google
             </button>
-            <p>
-                Do not violate the community guidelines or you will be banned for life!
-            </p>
-        </>
+        </div>
     );
 }
 
