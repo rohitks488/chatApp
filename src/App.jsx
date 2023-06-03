@@ -12,14 +12,16 @@ function App() {
     const [user] = useAuthState(auth);
     return (
         //min-h-fit h-screen
-        <div className="App mx-[250px] h-screen pb-8 overflow-y-auto bg-amber-100">
-            <header className="sticky top-0 flex flex-1 flex-col justify-center items-center bg-amber-950">
-                <div className=" relative w-fit m-5 text-5xl">⚛️🔥💬</div>
-                <SignOut />
+        <div className="flex flex-col App mx-[250px] h-screen pb-2 bg-amber-100">
+            <header className="flex flex-col items-center bg-amber-950">
+                <div className="w-fit m-5 text-5xl">⚛️🔥💬</div>
+                {user?<SignOut />:<SignIn/>}
             </header>
-            <UserContext.Provider value={user}>
-                <section>{user ? <ChatRoom/> : <SignIn/>}</section>
-            </UserContext.Provider>
+            {user && <UserContext.Provider value={user}>
+                <div className="flex flex-col flex-auto overflow-auto">
+                    <ChatRoom/>
+                </div>
+            </UserContext.Provider>}
         </div>
     );
 }

@@ -8,12 +8,10 @@ export function SignIn() {
     };
 
     return (
-        <div className="bg-amber-950 flex flex-col justify-center items-center">
             <button className="flex rounded-2xl text-1xl border-2 border-white h-fit w-fit px-2 py-1 m-5
       hover:border-black hover:bg-white hover:text-black hover:font-bold text-xl text-white" onClick={signInWithGoogle}>
                 Sign in with google
             </button>
-        </div>
     );
 }
 
