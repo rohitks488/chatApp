@@ -8,7 +8,7 @@ export default function ChatMessage(props) {
   return (
     <>
       <div className={`${user.uid===uid? " ml-auto flex-row-reverse " : "mr-auto "} message
-       ${messageClass} m-2 flex max-w-[80%]   w-fit }`}>
+       ${messageClass} m-2 text-xl flex max-w-[80%]   w-fit }`}>
         <img
           className={`${user.uid===uid? "ml-2" : "mr-2"} 
           w-6 h-6 flex flex-wrap  rounded-full`}

@@ -10,7 +10,7 @@ export default function SelectRoom(){
     }
     return(
         <div className="flex items-center justify-center my-auto">
-        <div className="flex flex-col w-72 h-[450px] bg-sky-200 border-2 border-gray-500 rounded-2xl items-center justify-center
+        <div className="flex flex-col w-80 h-[400px] bg-sky-200 border-2 border-gray-500 rounded-2xl items-center justify-center
             "> <span className="text-3xl font-bold text-black mb-16">Enter Room Id:</span>
         <input type="text"
                value={roomId}
