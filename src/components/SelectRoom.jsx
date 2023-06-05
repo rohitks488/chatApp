@@ -14,7 +14,7 @@ export default function SelectRoom(){
             "> <span className="text-3xl font-bold text-black mb-16">Enter Room Id:</span>
         <input type="text"
                value={roomId}
-               placeholder={"message"}
+               placeholder={"Ex-messages"}
                onChange={e=> setRoomId(e.target.value)}
                className="bg-gray-100 mb-5 rounded-2xl w-52 h-9 p-2 text-black"
         />
