@@ -1,4 +1,4 @@
-import {addDoc, collection, getDocs, getFirestore, limit, orderBy, query, startAfter} from "firebase/firestore";
+import {addDoc, setDoc, doc, collection, getDocs, getFirestore, limit, orderBy, query, startAfter} from "firebase/firestore";
 import {auth, firebaseApp} from "../config.js";
 import {useEffect, useRef, useState} from "react";
 import {useCollection} from "react-firebase-hooks/firestore";
@@ -8,8 +8,9 @@ import {Route, Routes, useParams, useSearchParams} from "react-router-dom";
 export function ChatRoom() {
     // room selection
     const url = new URL(document.location.href);
-    const room = url.searchParams.get('room') || 'messages1';
+    // const room = url.searchParams.get('room') || 'messages1';
     const {roomId} = useParams();
+
     // scroll logic
     const [currentScrollPos, setScrollPos] = useState(-1);
     const messagesWindowRef = useRef(null);
@@ -30,14 +31,17 @@ export function ChatRoom() {
 
     // messages fetch and pagination
     const [messages, setMessages] = useState([]);
-    const firestore = getFirestore(firebaseApp);
-    console.log(roomId);
 
+    const firestore = getFirestore(firebaseApp);
+
+    const collectionRef = collection(firestore, "listCollections");
     const messagesRef = collection(firestore, roomId||"messages1");
     const messagesDisplayLimit =Math.round(window.innerHeight/40);
     const msgQuery = (createdAt = 9999999999999) => query(messagesRef, orderBy("createdAt", "desc"),
         startAfter(createdAt), limit(messagesDisplayLimit));
     const [batch] = useCollection(msgQuery());
+    const [list] = useCollection(query(collectionRef));
+    let temp = [];
 
     async function getNextPage() {
         setScrollPos(scrollPos());
@@ -51,6 +55,7 @@ export function ChatRoom() {
     }, [messages])
 
     useEffect(() => {
+        {checkList()}
         setMessages(messages => {
             // scroll if first load or user is near the end of screen
             if (!messages?.length || scrollPercentWRTScreen() < 70) {
@@ -61,9 +66,30 @@ export function ChatRoom() {
         })
     }, [batch])
 
+    const updateList = async () => {
+            await addDoc(collectionRef, {
+                text: roomId,
+                createdAt: Date.now(),
+            });
+        }
+    ;
+
+    function checkList(){
+    let flag= 0;
+    list &&
+    list.docs.reverse().map((msg) => (
+        temp.push(msg.data('text'))
+    ));
+    temp &&
+    temp.map((msg) => (
+        msg.text==roomId?flag=1:null
+    ));
+         {temp.length>0?(flag==0&&roomId)?updateList():null:null}
+    }
 
     // send messages
     const [formValue, setFormValue] = useState("");
+
     const sendMessage = async (e) => {
         e.preventDefault();
         const {uid, photoURL} = auth.currentUser;
@@ -76,7 +102,7 @@ export function ChatRoom() {
         setFormValue("");
         scrollToBottom();
     }
-
+    ;
     return (
         <>
             <main
@@ -94,10 +120,8 @@ export function ChatRoom() {
                     batch.docs.reverse().map((msg) => (
                         <ChatMessage key={msg.id} message={msg.data()}/>
                     ))}
-
                 <span ref={dummy}/>
             </main>
-
             <form className="flex mt-auto" onSubmit={sendMessage}>
                 <textarea
                     rows={(formValue.length > 100) ? 2 : 1}

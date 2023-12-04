@@ -8,6 +8,7 @@ export function SignIn() {
     };
    // bg-gradient-to-r from-indigo-500 via-sky-400 to-blue-500
     return (
+
         <>
             <div className="text-6xl font-bold pt-10">CHAT APP</div>
         <div className="flex flex-col items-center justify-center w-96 h-[450px]

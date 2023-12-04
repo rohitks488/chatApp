@@ -6,6 +6,7 @@ import {auth} from "./config.js";
 import {ChatRoom} from "./components/ChatRoom.jsx";
 import {Routes, Route, useNavigate, useParams} from "react-router-dom";
 import Room from "./components/Room.jsx";
+import Help from "./components/Help.jsx";
 
 // const analytics = firebase.analytics();
 export const UserContext = createContext("")

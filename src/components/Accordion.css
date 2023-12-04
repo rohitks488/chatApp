@@ -1,0 +1,52 @@
+/* Accordion.css */
+button.aButton {
+    display: flex;
+    justify-content: center;
+    padding: 8px 20px;
+    background-color: #40e7d7;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-top: 2px;
+    width: 800px;
+    font-size: 25px;
+    color: darkblue;
+}
+
+button.b1 {
+    border-radius: 10px 10px 0 0;
+    border-bottom: 1px solid black;
+}
+button.b2 {
+    border-radius: 10px;
+}
+p.ap {
+    font-size: 20px;
+    /*margin-top: 5px;*/
+    padding: 5px;
+    background-color: #94f5eb;
+    width: 800px;
+    border-radius: 0px 0px 10px 10px;
+    margin-bottom: 10px;
+}
+
+button.aButton:hover {
+    background-color: #2299a1;
+}
+button.aButton:active {
+    transform: scale(0.99);
+}
+button.aButton:focus {
+    outline: none;
+}
+
+.accordion-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+div.aDiv {
+    color: black;
+}
