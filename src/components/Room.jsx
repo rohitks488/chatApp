@@ -27,10 +27,9 @@ export default function Room(){
         navigate(`/home/help/help`);
     }
     return user && (
-        <>
-        <div className="flex flex-col App mx-auto w-full h-screen pb-2 border-white border-b-2 bg-[url('../public/69.jpg')]">
-            <header className="flex flex-col items-center bg-gradient-to-r from-blue-500 to-indigo-700 ">
-                <div className="w-fit m-1 text-2xl"><span className={"justify-self-start mr-auto"}>{getLastPart()!=`home`||`help`?getLastPart().toUpperCase():null}</span>⚛️🔥💬</div>
+        <div className="flex flex-col App mx-auto w-full h-screen pb-2 border-white border-b-2 bg-[url('../public/black2.png')]">
+            <header className="flex flex-col items-center bg-gradient-to-r from-purple-500 via-violet-900 to-purple-500">
+                <div className="w-fit m-1 text-2xl"><span className={"justify-self-start mr-auto"}>{getLastPart()!=`home`||`help`?getLastPart().toUpperCase():null}</span> ⚛️🔥💬</div>
                 <div className="flex mx-10">
                     {user?<SignOut />:null}
                     {<button className="mx-10" onClick={handleOnClick2}>help</button> }
@@ -45,7 +44,6 @@ export default function Room(){
                     </Routes>
                 </div>
         </div>
-        </>
     )
 }
 

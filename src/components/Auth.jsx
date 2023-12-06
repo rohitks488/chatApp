@@ -8,19 +8,13 @@ export function SignIn() {
     };
    // bg-gradient-to-r from-indigo-500 via-sky-400 to-blue-500
     return (
-
-        <>
-            <div className="text-6xl font-bold pt-10">CHAT APP</div>
-        <div className="flex flex-col items-center justify-center w-96 h-[450px]
-        bg-gradient-to-r from-cyan-500 to-blue-500
-          mt-10 rounded-xl border-4 border-gray-600">
-            <span className="mb-10 text-black font-bold text-3xl ">New to App?</span>
-            <button className="flex bg-gray-700 rounded-2xl  text-1xl border-2 border-white h-fit w-fit px-3 py-1 m-1
-            hover:border-black hover:bg-white hover:text-black hover:font-bold text-xl text-white" onClick={signInWithGoogle}>
+        <div className={"flex flex-col w-full h-screen bg-[url('../public/front4.png')] m-"}>
+            {/*<div className={"flex text-7xl mt-80 ml-20 font-bold"}>CHAT APP</div>*/}
+            <button className="bg-gray-700 rounded-2xl ml-[1150px] mt-[440px] text-2xl border-2 border-white h-fit w-fit px-3 py-1 m-1
+            hover:border-black hover:bg-white hover:text-black hover:font-bold text-white" onClick={signInWithGoogle}>
                 Sign in with google
             </button>
         </div>
-        </>
     );
 }
 

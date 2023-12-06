@@ -16,8 +16,8 @@ export default function ChatMessage(props) {
             photoURL || "https://api.adorable.io/avatars/23/abott@adorable.png"
           }
         />
-          <div className={`${user.uid===uid? "pl-2 ml-auto flex-row-reverse bg-gray-700" : "mr-auto pr-2 bg-sky-700"} 
-          message rounded-2xl px-2 py-0.5 m-1}`}>
+          <div className={`${user.uid===uid? "pl-2 ml-auto flex-row-reverse text-black bg-white" : "mr-auto pr-2 bg-[#FFC0CB]"} 
+          message rounded-2xl text-black px-2 py-0.5 m-1}`}>
         <p className="text-1xl">{text}</p>
           </div>
       </div>

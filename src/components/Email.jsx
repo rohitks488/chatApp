@@ -56,7 +56,7 @@ function Email() {
                 onChange={(e)=>{setMessage(e.target.value)}}
                 className={" border-2 border-black p-2"}
             ></textarea>
-            <button type="submit">Send Email</button>
+            <button className={"border-2 w-1/5 px-2 border-[#AE33DAFF] font-semibold rounded-2xl text-white text-2xl hover:bg-[#E063FFFF] bg-[#AE33DAFF]"} type="submit">Send</button>
         </form>
     );
 }

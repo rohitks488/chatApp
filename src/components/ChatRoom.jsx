@@ -131,7 +131,7 @@ export function ChatRoom() {
                     onChange={(e) => setFormValue(e.target.value)}
                     placeholder="say something nice"
                 />
-                <button className="mr-auto flex my-2 p-1.5 " type="submit" disabled={!formValue}>
+                <button className="mr-auto text-3xl flex my-2 p-1.5 " type="submit" disabled={!formValue}>
                     🕊
                 </button>
             </form>

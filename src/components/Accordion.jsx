@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import './Accordion.css'
 function Accordion({ items }) {
-   const [activeIndex, setActiveIndex] = useState(-1);
+   const [activeIndex, setActiveIndex] = useState(0);
    const handleClick = (index) => {
       setActiveIndex(index === activeIndex ? -1 : index);
    };
