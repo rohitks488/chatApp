@@ -5,13 +5,9 @@ import {useCollection} from "react-firebase-hooks/firestore";
 import {useEffect, useState} from "react";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faCircleDot, faCoffee} from '@fortawesome/free-solid-svg-icons'
 import {MdArrowBackIos, MdArrowForward, MdArrowForwardIos} from "react-icons/md";
-import {faEllipsis} from '@fortawesome/free-solid-svg-icons'
 import '../index.css';
 import '../fonts.css';
-import {LuDot} from "react-icons/lu";
 import {GoDotFill} from "react-icons/go";
 
 export default function SelectRoom(){

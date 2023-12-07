@@ -1,8 +1,5 @@
 import {GoogleAuthProvider, signInWithPopup} from "firebase/auth";
 import {auth} from "../config.js";
-import SelectRoom from "./SelectRoom.jsx";
-import Help from "./Help.jsx";
-import {ChatRoom} from "./ChatRoom.jsx";
 import {Face} from "./FaceAuth.jsx";
 import {useState} from "react";
 

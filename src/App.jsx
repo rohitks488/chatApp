@@ -1,14 +1,11 @@
 import {useAuthState} from "react-firebase-hooks/auth";
 import {createContext, useEffect} from "react";
 import "./App.css";
-import {SignIn, SignOut} from "./components/Auth.jsx";
+import {SignIn} from "./components/Auth.jsx";
 import {auth} from "./config.js";
-import {ChatRoom} from "./components/ChatRoom.jsx";
-import {Routes, Route, useNavigate, useParams} from "react-router-dom";
+import {Routes, Route, useNavigate} from "react-router-dom";
 import Room from "./components/Room.jsx";
-import Help from "./components/Help.jsx";
 
-// const analytics = firebase.analytics();
 export const UserContext = createContext("")
 
 function App() {

@@ -1,9 +1,7 @@
-import {SignIn, SignOut} from "./Auth.jsx";
+import {SignOut} from "./Auth.jsx";
 import {ChatRoom} from "./ChatRoom.jsx";
 import {UserContext} from "../App.jsx";
-import {useAuthState} from "react-firebase-hooks/auth";
-import {auth} from "../config.js";
-import {Route, Routes,useNavigate, useParams} from "react-router-dom";
+import {Route, Routes,useNavigate} from "react-router-dom";
 import {useContext} from "react";
 import SelectRoom from "./SelectRoom.jsx";
 import Help from "./Help.jsx";
@@ -11,8 +9,6 @@ import Help from "./Help.jsx";
 export default function Room(){
     const user=useContext(UserContext);
     const navigate = useNavigate();
-    const {roomId} = useParams();
-    console.log(roomId)
     function getLastPart() {
         let url = new URL(document.location.href);
         const parts = url.pathname.split('/');
@@ -46,5 +42,3 @@ export default function Room(){
         </div>
     )
 }
-
-//bg-[url('../public/69.jpg')]
