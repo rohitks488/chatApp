@@ -20,21 +20,13 @@ export default function SelectRoom(){
     const firestore = getFirestore(firebaseApp);
     const collectionRef = collection(firestore, "listCollections");
     const [list] = useCollection(query(collectionRef));
-    // // const  [temp, setTemp] = useState([]);
-    // // useEffect(()=>{
-    // //     list &&
-    // //     list.docs.reverse().map((msg) => (
-    // //         // temp.push(msg.data('text'))
-    // //         setTemp(e=>[...temp,msg.data('text')])
-    // //     ));
-    // // },[])
-    //
+
     let temp = []
     list &&
     list.docs.reverse().map((msg) => (
         temp.push(msg.data('text'))
     ));
-    // {console.log(temp)}
+
     function handleOnClick(){
         navigate(`/home/${roomId}`);
     }
