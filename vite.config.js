@@ -6,6 +6,6 @@ export default defineConfig({
   base: '/chatApp/',
   plugins: [react()],
   build: {
-    outDir: './dist'
+    outDir: './docs'
   },
 })
