@@ -110,7 +110,7 @@ export function ChatRoom() {
                 className="flex flex-col px-2 overflow-auto">
                 <button
                     onClick={getNextPage}
-                    className="border-2 border-black text-black">load more
+                    className="rounded-2xl text-xl font-semibold bg-white border-2 border-black text-black">load more
                 </button>
                 {messages &&
                     messages.slice(0, -messagesDisplayLimit).map((msg) => (
