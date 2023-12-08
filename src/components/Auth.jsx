@@ -36,11 +36,13 @@ export function SignIn() {
 export function SignOut() {
     return (
         <>
-            <button className="rounded-2xl flex text-1xl border-2 border-white h-fit w-fit px-2 py-1 m-5
-      hover:border-black hover:bg-white hover:text-black hover:font-bold text-xl"
+            <button className="flex h-fit w-fit px-2 py-1 m-5 bg-gray-700 rounded-2xl text-xl border-2 border-white
+hover:border-black hover:bg-white hover:text-black hover:font-bold text-white"
                     onClick={() => auth.signOut()}>
                 Sign Out
             </button>
         </>
     );
 }
+// className="bg-gray-700 rounded-2xl text-2xl border-2 border-white
+// hover:border-black hover:bg-white hover:text-black hover:font-bold text-white"

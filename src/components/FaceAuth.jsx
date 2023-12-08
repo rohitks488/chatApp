@@ -72,9 +72,9 @@ export function Face() {
 
     return (
         <div>
-            <button className={"bg-gray-700 rounded-2xl ml-[10px] mt-[440px] text-2xl border-2 border-white h-fit w-fit px-3 py-1 m-1\n" +
+            <button className={"bg-gray-700 rounded-2xl ml-[10px] mt-[440px] text-2xl border-2 border-white h-fit w-fit px-3 py-1 m-1" +
                 "            hover:border-black hover:bg-white hover:text-black hover:font-bold text-white"} onClick={handleSignIn} >Sign-in with face</button>
-            <button className={"bg-gray-700 rounded-2xl ml-[10px] mt-[440px] text-2xl border-2 border-white h-fit w-fit px-3 py-1 m-1\n" +
+            <button className={"bg-gray-700 rounded-2xl ml-[10px] mt-[440px] text-2xl border-2 border-white h-fit w-fit px-3 py-1 m-1" +
                 "            hover:border-black hover:bg-white hover:text-black hover:font-bold text-white"} onClick={handleLogIn}>Log-in with face</button>
         </div>
     );
